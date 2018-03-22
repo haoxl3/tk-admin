@@ -6,6 +6,7 @@ import router from './router/router'
 import axios from './router/axios'
 import VueAxios from 'vue-axios'
 import element from 'element-ui'
+import './styles/common.scss';
 
 Vue.use(element)
 Vue.use(VueAxios, axios)
