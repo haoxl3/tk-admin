@@ -5,6 +5,7 @@
             <sidebar class="left pull-chheight"></sidebar>
             <div class="right">
                 <tags ref="nav" class="nav"></tags>
+                <div class="main-test">test</div>
                 <router-view class="main"></router-view>
             </div>
         </div>

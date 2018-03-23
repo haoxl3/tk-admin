@@ -1,5 +1,7 @@
 <template>
-    <div>table.vue</div>
+    <div class="table-container pull-chheight">
+        table vue
+    </div>
 </template>
 <script>
 export default {
