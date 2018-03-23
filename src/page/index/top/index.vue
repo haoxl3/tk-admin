@@ -3,9 +3,9 @@
         <div class="header-button is-left">
             <top-logo></top-logo>
         </div>
-        <!-- <h1 class="header-title">
+        <h1 class="header-title">
             <topMenu></topMenu>
-        </h1> -->
+        </h1>
         <div class="header-button is-right">
             <!-- <el-tooltip class="item" effect="dark" content="锁屏" placement="bottom">
                 <span class="header-item">
@@ -18,10 +18,10 @@
                 </span>
             </el-tooltip>
             <el-dropdown>
-                <!-- <span class="el-dropdown-link">
-                    {{userInfo.username}}
+                <span class="el-dropdown-link">
+                    登录的用户名<!-- {{userInfo.username}} -->
                     <i class="el-icon-arrow-down el-icon--right"></i>
-                </span> -->
+                </span>
                 <el-dropdown-menu slot="dropdown">
                     <el-dropdown-item>
                         <router-link to="/">首页</router-link>
@@ -42,21 +42,23 @@
     </div>
 </template>
 <script>
-// import { mapState, mapGetters } from "vuex"
-// import { fullscreenToggel } from "@/util/util"
+import { mapState, mapGetters } from "vuex"
+import { fullscreenToggel } from "@/util/util"
 import topLogo from './top-logo'
+import topMenu from "./top-menu"
 export default {
     components: {
-        topLogo
+        topLogo,
+        topMenu
     },
     name: 'top',
-//     computed: {
-//         ...mapGetters(['isFullScren'])
-//     },
+    computed: {
+        ...mapGetters(["isFullScren"])
+    },
     methods: {
         handleScreen() {
-            // this.$store.commit('SET_FULLSCREN')
-            // fullscreenToggel()
+            this.$store.commit('SET_FULLSCREN')
+            fullscreenToggel()
         },
         logout() {
             

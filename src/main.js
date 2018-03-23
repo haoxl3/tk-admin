@@ -5,8 +5,10 @@ import App from './App'
 import router from './router/router'
 import axios from './router/axios'
 import VueAxios from 'vue-axios'
+import store from './store'
 import element from 'element-ui'
-import './styles/common.scss';
+// import {iconfontUrl} from '@/config/env'
+import './styles/common.scss'
 
 Vue.use(element)
 Vue.use(VueAxios, axios)
@@ -17,6 +19,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

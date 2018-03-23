@@ -8,6 +8,11 @@ import top from "./top/";
 export default {
     components: {
         top
+    },
+    data() {
+        return {
+            isLock: false 
+        }
     }
 }
 </script>
