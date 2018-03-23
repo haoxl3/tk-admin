@@ -1,6 +1,7 @@
 const common = {
     state: {
         isFullScren: false,
+        isCollapse: false,
     },
     actions: {
 
@@ -8,6 +9,9 @@ const common = {
     mutations: {
         SET_FULLSCREN: (state, action) => {
             state.isFullScren = !state.isFullScren;
+        },
+        SET_COLLAPSE: (state, action) => {
+            state.isCollapse = !state.isCollapse;
         },
     }
 }

@@ -7,7 +7,9 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+    name: 'top-logo'
+}
 </script>
 <style scoped="scoped" lang="scss">
 .logo {

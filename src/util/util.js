@@ -42,3 +42,15 @@ export const exitFullScreen = () => {
         document.mozCancelFullScreen();
     }
 }
+/**
+ * 总体路由处理器
+ */
+export const resolveUrlPath = (url) => {
+    let reqUrl = url 
+    if(url.indexOf('http') != -1) {
+        reqUrl = `/myiframe/urlPath?src=${reqUrl}`
+    } else {
+        reqUrl = `${reqUrl}`
+    }
+    return reqUrl
+}
