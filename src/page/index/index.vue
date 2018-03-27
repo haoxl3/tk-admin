@@ -5,7 +5,6 @@
             <sidebar class="left pull-chheight"></sidebar>
             <div class="right">
                 <tags ref="nav" class="nav"></tags>
-                <div class="main-test">test</div>
                 <router-view class="main"></router-view>
             </div>
         </div>
@@ -20,7 +19,7 @@ export default {
     components: {
         top,
         tags,
-        sidebar
+        sidebar,
     },
     data() {
         return {
@@ -43,7 +42,7 @@ export default {
     overflow-y: auto;
   }
   .right {
-    padding-top: 90px;
+    padding-top: 50px;
     position: relative;
     flex: 1;
     box-sizing: border-box;

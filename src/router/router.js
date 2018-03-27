@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import INDEX from '@/page/index/'
+import Wel from '@/page/wel'
+import Table from '@/page/table'
 
 const _import = require('./_import')
 Vue.use(VueRouter)
@@ -20,7 +22,7 @@ export default new VueRouter({
                 {
                     path: 'index',
                     name: '首页',
-                    component: _import('wel')
+                    component: Wel
                 }
             ]
         },
@@ -32,7 +34,7 @@ export default new VueRouter({
                 {
                     path: 'index',
                     name: '表格CRUD', 
-                    component: _import('table/index')
+                    component: Table
                 }
             ]
         }
