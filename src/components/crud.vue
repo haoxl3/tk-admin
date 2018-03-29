@@ -24,7 +24,7 @@
           </template>
         </el-table-column>
       </template>
-      <!-- <el-table-column label="操作" :width="width" v-if="tableOption.menu==undefined?true:tableOption.menu">
+      <el-table-column label="操作" :width="width" v-if="tableOption.menu==undefined?true:tableOption.menu">
         <template slot-scope="scope">
           <template v-if="menu">
             <el-button type="primary" icon="el-icon-edit" size="small" @click="handleEdit(scope.row,scope.$index)" v-if="tableOption.editBtn==undefined?true:tableOption.meeditBtnnu">编 辑</el-button>
@@ -32,7 +32,7 @@
           </template>
           <slot :row="scope.row" name="menu"></slot>
         </template>
-      </el-table-column> -->
+      </el-table-column>
     </el-table>
     <el-pagination v-if="tableOption.page==undefined?true:tableOption.page" class="crud-pagination pull-right" :current-page.sync="page.currentPage" :background="page.background?page.background:true" :page-size="page.pageSize" @current-change="handleCurrentChange" layout="total, sizes, prev, pager, next, jumper" :total="page.total"></el-pagination>
     <!-- <el-dialog :title="boxType==0?'新增':'编辑'" :visible.sync="boxVisible" width="50%" :before-close="boxhandleClose">
@@ -162,9 +162,9 @@ export default {
       });
       this.tableForm = Object.assign({}, from);
     },
-    //页码回掉
+    //页码回调
     handleCurrentChange(val) {
-    //   this.$emit("handleCurrentChange", val);
+      this.$emit("handleCurrentChange", val);
     },
     findByvalue(dic, val) {
       return findByvalue(dic, val);
@@ -221,7 +221,7 @@ export default {
     },
     // 删除
     handleDel(row, index) {
-    //   this.$emit("handleDel", row, index);
+      this.$emit("handleDel", row, index);
     },
     //保存
     handleSave() {

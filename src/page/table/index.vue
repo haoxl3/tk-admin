@@ -28,6 +28,7 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 import Crud from "@/components/crud/";
 import tableOption from "@/const/tableOption";
 export default {
@@ -54,6 +55,9 @@ export default {
     created() {
         this.formJson = JSON.stringify(tableOption, null, 2);
         this.handleList();
+    },
+    computed: {
+        ...mapGetters(["menuAll"])
     },
     methods: {
         //调用crud的handleadd方法即可
@@ -108,11 +112,24 @@ export default {
         handleUpdate() {
 
         },
-        handleDel() {
-
+        handleDel(row, index) {
+            this.$confirm(`是否确认删除序号为${row.name}`, "提示", {
+                confirmButtonText: "确定",
+                cancelButtonText: "取消",
+                type: "warning"
+            }).then(() => {
+                this.tableData.splice(index, 1);
+                this.$message({
+                    showClose: true,
+                    message: "删除成功",
+                    type: "success"
+                });
+            }).catch(err => {});
         },
+        //分页
         handleCurrentChange() {
-
+            this.tablePage = val;
+            this.handleList();
         },
         handleSelectionChange() {
 
