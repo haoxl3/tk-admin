@@ -1,4 +1,4 @@
-import {getMenu, getMenuAll} from '@/api/user'
+import {getMenu, getMenuAll, getTableData} from '@/api/user'
 const user = {
     state: {
         menu: [],
@@ -25,7 +25,16 @@ const user = {
                     resolve(data)
                 })
             })
-        }
+        },
+        //获取表格数据
+        GetTableData({ commit, state, dispatch }, page) {
+            return new Promise((resolve, reject) => {
+                getTableData(page).then(res => {
+                    const data = res.data;
+                    resolve(data);
+                })
+            })
+        },
     },
     mutations: {
         SET_MENU: (state, menu) => {
