@@ -61,10 +61,33 @@ export default {
             this.$refs.crud.handleAdd();
         },
         handleExport() {
-
+            import("@/vendor/Export2Excel").then(excel => {
+                const tHeader = ["username", "name"];
+                const filterVal = ["username", "name"];
+                const list = this.tableData;
+                const data = this.formatJson(filterVal, list);
+                excel.export_json_to_excel(tHeader, data, this.filename);
+            });
         },
-        toggleSelection() {
-
+        formatJson(filterVal, jsonData) {
+            return jsonData.map(v =>
+                filterVal.map(j => {
+                    if (j === "timestamp") {
+                        return parseTime(v[j]);
+                    } else {
+                        return v[j];
+                    }
+                })
+            );
+        },
+        /**
+         * @title 选中第几行
+         * @param row 选中那几行数据
+         * @detail 调用crud的toggleSelection方法即可
+         *
+         **/
+        toggleSelection(row) {
+            this.$refs.crud.toggleSelection(row);
         },
         boxhandleOpen(show) {
             this.$message({

@@ -171,13 +171,13 @@ export default {
     },
     // 选中实例
     toggleSelection(rows) {
-    //   if (rows) {
-    //     rows.forEach(row => {
-    //       this.$refs.table.toggleRowSelection(row);
-    //     });
-    //   } else {
-    //     this.$refs.table.clearSelection();
-    //   }
+      if (rows) {
+        rows.forEach(row => {
+          this.$refs.table.toggleRowSelection(row);//element-ui中的方法
+        });
+      } else {
+        this.$refs.table.clearSelection();
+      }
     },
     //选择回调
     handleSelectionChange(val) {
