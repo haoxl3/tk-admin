@@ -35,7 +35,7 @@
       </el-table-column>
     </el-table>
     <el-pagination v-if="tableOption.page==undefined?true:tableOption.page" class="crud-pagination pull-right" :current-page.sync="page.currentPage" :background="page.background?page.background:true" :page-size="page.pageSize" @current-change="handleCurrentChange" layout="total, sizes, prev, pager, next, jumper" :total="page.total"></el-pagination>
-    <!-- <el-dialog :title="boxType==0?'新增':'编辑'" :visible.sync="boxVisible" width="50%" :before-close="boxhandleClose">
+    <el-dialog :title="boxType==0?'新增':'编辑'" :visible.sync="boxVisible" width="50%" :before-close="boxhandleClose">
       <el-form ref="tableForm" :model="tableForm" label-width="80px" :rules="tableFormRules">
         <el-row :gutter="20" :span="24">
           <template v-for="(column,index) in tableOption.column">
@@ -71,7 +71,7 @@
         <el-button type="primary" @click="handleSave" v-else>新 增</el-button>
         <el-button @click="boxVisible = false">取 消</el-button>
       </span>
-    </el-dialog> -->
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -213,11 +213,11 @@ export default {
     },
     // 编辑
     handleEdit(row, index) {
-    //   this.tableForm = Object.assign({}, row);
-    //   this.tableIndex = index;
-    //   this.boxType = 1;
-    //   if (typeof this.beforeClose === "function") this.beforeOpen(this.show);
-    //   else this.show();
+      this.tableForm = Object.assign({}, row);
+      this.tableIndex = index;
+      this.boxType = 1;
+      if (typeof this.beforeClose === "function") this.beforeOpen(this.show);
+      else this.show();
     },
     // 删除
     handleDel(row, index) {
@@ -225,11 +225,11 @@ export default {
     },
     //保存
     handleSave() {
-    //   this.$refs["tableForm"].validate(valid => {
-    //     if (valid) {
-    //       this.$emit("handleSave", this.tableForm, this.hide);
-    //     }
-    //   });
+      this.$refs["tableForm"].validate(valid => {
+        if (valid) {
+          this.$emit("handleSave", this.tableForm, this.hide);
+        }
+      });
     },
     //更新
     handleUpdate() {

@@ -106,8 +106,20 @@ export default {
         boxhandleClose() {
 
         },
-        handleSave() {
-
+        /**
+        * @title 数据添加
+        * @param row 为当前的数据
+        * @param done 为表单关闭函数
+        *
+        **/
+        handleSave(row, done) {
+            this.tableData.push(row);
+            this.$message({
+                showClose: true,
+                message: "添加成功",
+                type: "success"
+            });
+            done();
         },
         handleUpdate() {
 
