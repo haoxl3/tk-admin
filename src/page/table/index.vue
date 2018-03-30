@@ -167,8 +167,28 @@ export default {
         handleSelectionChange() {
 
         },
+        //格式化
         formate() {
-
+            let p = new Promise((resolve, reject) => {
+                resolve(JSON.parse(this.formJson));
+            });
+            p.
+                then(data => {
+                    this.tableOption = data;
+                    this.formJson = JSON.stringify(data, null, 2);
+                    this.$message({
+                        message: "数据加载成功",
+                        type: "success"
+                    });
+                })
+                .catch(err => {
+                    this.$message({
+                        center: true,
+                        dangerouslyUseHTMLString: true,
+                        message: `JSON格式错误<br \>\n${err}`,
+                        type: "error"
+                    });
+                });
         },
         /**
         * @title 获取数据
