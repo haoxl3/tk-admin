@@ -121,8 +121,21 @@ export default {
             });
             done();
         },
-        handleUpdate() {
-
+        /**
+        * @title 数据更新
+        * @param row 为当前的数据
+        * @param index 为当前更新数据的行数
+        * @param done 为表单关闭函数
+        *
+        **/
+        handleUpdate(row, index, done) {
+            this.tableData.splice(index, 1, row);
+            this.$message({
+                showClose: true,
+                message: "修改成功",
+                type: "success"
+            });
+            done();
         },
         handleDel(row, index) {
             this.$confirm(`是否确认删除序号为${row.name}`, "提示", {

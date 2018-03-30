@@ -233,12 +233,12 @@ export default {
     },
     //更新
     handleUpdate() {
-    //   this.$refs["tableForm"].validate(valid => {
-    //     if (valid) {
-    //       const index = this.tableIndex;
-    //       this.$emit("handleUpdate", this.tableForm, index, this.hide);
-    //     }
-    //   });
+      this.$refs["tableForm"].validate(valid => {
+        if (valid) {
+          const index = this.tableIndex;
+          this.$emit("handleUpdate", this.tableForm, index, this.hide);
+        }
+      });
     },
     //显示表单
     show(cancel) {
