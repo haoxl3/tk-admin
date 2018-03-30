@@ -99,12 +99,20 @@ export default {
                 message: "表单打开前处理事件",
                 type: "success"
             });
-            console.log('****show*****')
-            console.log(show)
             show();
         },
-        boxhandleClose() {
-
+        /**
+        * @title 表单关闭前处理
+        * @param done
+        *
+        **/
+        boxhandleClose(done) {
+            this.$message({
+                showClose: true,
+                message: "表单关闭前处理事件",
+                type: "success"
+            });
+            done();
         },
         /**
         * @title 数据添加

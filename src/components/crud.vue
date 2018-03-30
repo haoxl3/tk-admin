@@ -255,9 +255,9 @@ export default {
     //窗口关闭处理事件
     boxhandleClose() {
       //释放form表单
-    //   this.tableForm = {};
-    //   if (typeof this.beforeClose === "function") this.beforeClose(this.hide);
-    //   else this.hide();
+      this.tableForm = {};
+      if (typeof this.beforeClose === "function") this.beforeClose(this.hide);
+      else this.hide();
     }
   },
 };
