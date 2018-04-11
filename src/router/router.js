@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import INDEX from '@/page/index/'
 import Wel from '@/page/wel'
 import Table from '@/page/table'
+import Form from '@/page/form'
 
 const _import = require('./_import')
 Vue.use(VueRouter)
@@ -37,6 +38,18 @@ export default new VueRouter({
                     component: Table
                 }
             ]
+        },
+        {
+            path: '/form',
+            component: INDEX,
+            redirect: '/form/index',
+            children: [
+                {
+                    path: 'index',
+                    name: '表单CRUD',
+                    component: Form
+                }
+            ]        
         }
     ]
 })

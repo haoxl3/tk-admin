@@ -5,5 +5,12 @@ const first = [{
     icon: 'icon-biaoge',
     meta: {},
     children: []
+}, {
+    id: 9,
+    label: "表单CRUD",
+    href: '/form/index',
+    icon: 'icon-biaodan',
+    meta: {},
+    children: []
 }]
 export const menu = [first]
