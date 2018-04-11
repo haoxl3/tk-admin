@@ -2,7 +2,7 @@
     <div class="form-container pull-chheight">
         <tk-form :formOption="formOption" :formSubmitText="formSubmitText" @handleSubmit="handleSubmit"></tk-form>
         <el-button @click.native="formate" style="margin: 8px 0">格式化</el-button>
-        <el-button type="textarea" :autosize="{minRows: 2, maxRows: 15}" placeholder="请输入内容" v-model="formJson"></el-button>
+        <el-input type="textarea" :autosize="{minRows: 2, maxRows: 15}" placeholder="请输入内容" v-model="formJson"></el-input>
     </div>
 </template>
 <script>
@@ -34,3 +34,8 @@ export default {
     }
 }
 </script>
+<style lang="scss" scoped>
+.form-container {
+  padding: 8px 10px;
+}
+</style>
