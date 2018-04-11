@@ -35,6 +35,7 @@
     </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 export default {
     props: {
         formOption: {
@@ -68,6 +69,7 @@ export default {
         this.formInit();
     },
     methods: {
+        ...mapActions(['GetDic']),
         rulesInit() {
             this.formRules = {};
             this.formOption.column.forEach(ele => {
@@ -75,7 +77,9 @@ export default {
             })
         },
         dicInit() {
-            // this.GetDic()
+            this.GetDic(this.formOption.dic).then(data => {
+                this.DIC = data
+            })
         },
         formInit() {
             const list = this.formOption.column

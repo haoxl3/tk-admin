@@ -43,7 +43,13 @@ export default {
             })
         },
         handleSubmit(form) {
-
+            if(form) {
+                this.form = form 
+                this.$message({
+                    message: form,
+                    type: 'success'
+                })
+            }
         }
     },
     components: {
